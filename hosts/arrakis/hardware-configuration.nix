@@ -40,4 +40,28 @@
   nixpkgs.config.allowUnfree = true;
   hardware.bumblebee.enable = true;
   environment.systemPackages = with pkgs; [ linuxPackages.bbswitch];
+
+  services.xserver = {
+    enable = true;
+
+    # Tearing fix
+    videoDrivers = [ "intel" ];
+    deviceSection = ''
+      Option "TearFree" "true"
+    '';
+
+    # Enable touchpad support.
+    libinput.enable = true;
+
+    # Disable mouse acceleration
+    config = ''
+      Section "InputClass"
+        Identifier "mouse accel"
+        Driver "libinput"
+        MatchIsPointer "on"
+        Option "AccelProfile" "flat"
+        Option "AccelSpeed" "0"
+      EndSection
+    '';
+  };
 }

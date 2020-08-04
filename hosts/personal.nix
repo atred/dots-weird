@@ -7,6 +7,7 @@
     exfat
     ntfs3g
     hfsprogs
+    pamixer
   ];
 
   # Nothing in /tmp should survive a reboot
@@ -46,11 +47,7 @@
     XDG_CACHE_HOME  = "$HOME/.cache";
     XDG_DATA_HOME   = "$HOME/.local/share";
     XDG_BIN_HOME    = "$HOME/.local/bin";
-  };
 
-  # Conform more programs to XDG conventions. The rest are handled by their
-  # respective modules.
-  my.env = {
     __GL_SHADER_DISK_CACHE_PATH = "$XDG_CACHE_HOME/nv";
     CUDA_CACHE_PATH = "$XDG_CACHE_HOME/nv";
     HISTFILE = "$XDG_DATA_HOME/bash/history";

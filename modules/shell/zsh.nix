@@ -14,15 +14,16 @@ with lib;
     my = {
       packages = with pkgs; [
         zsh
+        oh-my-zsh
         nix-zsh-completions
         fd
         fzf
         htop
+        gotop
         tldr
         tree
       ];
 
-      # Write it recursively so other modules can write files to it
       home.file.".zshrc".source = <config/zsh/rc>
     };
 

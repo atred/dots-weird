@@ -3,18 +3,28 @@
   my.packages = with pkgs; [
     xfce.thunar
     xfce.tumbler # for thumbnails
-
     evince    # pdf reader
     feh       # image viewer
     mpv       # video player
     zathura   # vi-like pdf reader
     xclip
     xdotool
+    scrot
+    wmname
+    xorg.xbacklight
+    unclutter
+    pavucontrol
   ];
+
+  ## Misc config files without another home
+  my.home.xdg.configFile = {
+    "user-dirs.dirs".source = <config/user-dirs.dirs>;
+  };
 
   ## Sound
   sound.enable = true;
   hardware.pulseaudio.enable = true;
+  networking.networkmanager.enable = true;
 
   ## Fonts
   fonts = {
@@ -38,11 +48,13 @@
   ## Apps/Services
   services.xserver = {
     displayManager.lightdm.greeters.mini.user = config.my.username;
+    layout = "us";
+    xkbOptions = "caps:escape";
   };
 
   services.picom = {
     backend = "glx";
-    vSync = true;
+    vSync = false; # TODO change this on desktop
     opacityRules = [
       # "100:class_g = 'Firefox'"
       # "100:class_g = 'Vivaldi-stable'"

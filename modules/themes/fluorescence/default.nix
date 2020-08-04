@@ -58,13 +58,13 @@ let cfg = config.modules; in
     my.zsh.rc = lib.readFile ./zsh/prompt.zsh;
 
     my.home = {
-      home.file = mkMerge [
-        (mkIf cfg.desktop.browsers.firefox.enable {
-          ".mozilla/firefox/${cfg.desktop.browsers.firefox.profileName}.default/chrome/userChrome.css" = {
-            source = ./firefox/userChrome.css;
-          };
-        })
-      ];
+      # home.file = mkMerge [
+      #   (mkIf cfg.desktop.browsers.firefox.enable {
+      #     ".mozilla/firefox/${cfg.desktop.browsers.firefox.profileName}.default/chrome/userChrome.css" = {
+      #       source = ./firefox/userChrome.css;
+      #     };
+      #   })
+      # ];
 
       xdg.configFile = mkMerge [
         (mkIf config.services.xserver.enable {

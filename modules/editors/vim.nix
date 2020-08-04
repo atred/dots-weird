@@ -17,6 +17,19 @@ with lib;
         editorconfig-core-c
         neovim
       ];
+
+      home.programs.neovim = {
+        enable = true;
+        vimAlias = true;
+        extraConfig = builtins.readFile <config/vim/extraConfig.vim>;
+
+        plugins = with pkgs.vimPlugins; [
+          vim-nix
+          rust-vim
+          nord-vim
+          lightline-vim
+        ];
+      };
     };
   };
 }
