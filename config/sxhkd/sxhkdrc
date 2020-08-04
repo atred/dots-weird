@@ -1,0 +1,97 @@
+super + alt + Escape
+	bspc quit
+
+super + {_,shift + }q
+	bspc node -{c,k}
+
+super + t
+	bspc desktop -l next
+
+super + apostrophe
+	bspc window -s last
+
+# Attach to a detached session. If none is available create a new one, rather
+# than attach to one that is already attached to elsewhere.
+super + Return
+	xst
+
+ctrl + super + Return
+	xst
+
+# program execution
+super + space ; {b,f,n,t,e}
+        {firefox,firefox,thunar,thunar,emacs}
+
+super + grave
+	scratch
+
+super + shift + grave
+	emacsclient -e '(open-scratch-frame)'
+
+super + d
+	~/dots/bin/rofi/appmenu
+
+super + Tab
+	~/dots/bin/rofi/windowmenu
+
+super + slash
+	~/dots/bin/rofi/filemenu -x
+
+super + Escape
+	pkill -USR1 -x sxhkd
+
+
+#
+##
+
+## Toggle floating/fullscreen
+super + {_,ctrl + }f
+	bspc node -t ~{floating,fullscreen}
+
+
+super + {_,ctrl +}{h,j,k,l}
+	~/dots/bin/bspwm/focus {_,-m }{west,south,north,east}
+
+super + shift + {_,ctrl +}{h,j,k,l}
+	~/dots/bin/bspwm/swap {_,-m }{west,south,north,east}
+
+## Presel
+super + alt + {h,j,k,l}
+	bspc node -p {west,south,north,east}
+
+super + alt + Delete
+	bspc node -p cancel
+
+super + {_,shift +}{1-9,0}
+	bspc {desktop -f,node -d} {1-9,10};
+
+# expand a window by moving one of its side outward
+super + {Left,Down,Up,Right}
+        ~/dots/bin/bspwm/resize {west,south,north,east}
+
+# contract a window by moving one of its side inward
+super + ctrl + {Left,Down,Up,Right}
+	bspc node -z {right -40 0,top 0 40,bottom 0 -40,left 40 0}
+
+# move a floating window
+super + shift + {Left,Down,Up,Right}
+	bspc node -v {-40 0,0 40,0 -40,40 0}
+
+
+#
+## Media keys
+
+XF86AudioMute
+    pamixer -t
+
+XF86Audio{Raise,Lower}Volume
+    pamixer -{i,d} 5
+
+XF86MonBrightness{Up,Down}
+    xbacklight -{inc,dec} 10
+
+super + {F1,F2,F3}
+    mpc {toggle,prev,next}
+
+super + shift + {F2,F3}
+    mpc volume {-,+}5

@@ -57,7 +57,7 @@ device: username:
   my.user = {
     isNormalUser = true;
     uid = 1000;
-    extraGroups = [ "wheel" "networkmanager" ];
+    extraGroups = [ "wheel" "networkmanager" "video" ];
     shell = pkgs.zsh;
   };
 

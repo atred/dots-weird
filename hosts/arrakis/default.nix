@@ -1,4 +1,4 @@
-# Arrakis -- my laptop
+# Arrakis --- my laptop
 
 { pkgs, ... }:
 {
@@ -12,19 +12,14 @@
       bspwm.enable = true;
 
       apps.rofi.enable = true;
-      apps.discord.enable = true;
-      apps.graphics.enable = true;   # raster/vector/sprites
-      apps.recording.enable = true;  # recording screen/audio
-      # apps.vm.enable = true;       # virtualbox for testing
+      # apps.discord.enable = true;
+      # apps.vm.enable = true;
 
       term.default = "xst";
       term.st.enable = true;
 
       browsers.default = "firefox";
       browsers.firefox.enable = true;
-
-      # gaming.emulators.psx.enable = true;
-      # gaming.steam.enable = true;
     };
 
     editors = {
@@ -42,23 +37,13 @@
     };
 
     media = {
-      mpv.enable = true;
-      spotify.enable = true;
+      # mpv.enable = true;
+      # spotify.enable = true;
     };
 
     shell = {
-      direnv.enable = true;
       git.enable = true;
-      gnupg.enable = true;
-      # weechat.enable = true;
-      pass.enable = true;
-      tmux.enable = true;
-      # ranger.enable = true;
       zsh.enable = true;
-    };
-
-    services = {
-      syncthing.enable = true;
     };
 
     # themes.aquanaut.enable = true;
@@ -66,15 +51,12 @@
   };
 
   programs.ssh.startAgent = true;
-  networking.wireless.enable = true;
-  hardware.opengl.enable = true;
 
-  time.timeZone = "America/Toronto";
-  # time.timeZone = "Europe/Copenhagen";
+  time.timeZone = "America/New_York";
 
   # Optimize power use
   environment.systemPackages = [ pkgs.acpi ];
   powerManagement.powertop.enable = true;
   # Monitor backlight control
-  programs.light.enable = true;
+  harware.acpilight.enable = true;
 }

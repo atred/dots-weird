@@ -36,4 +36,8 @@
   hardware.cpu.intel.updateMicrocode = true;
 
   services.fstrim.enable = true;
+
+  nixpkgs.config.allowUnfree = true;
+  hardware.bumblebee.enable = true;
+  environment.systemPackages = with pkgs; [ linuxPackages.bbswitch];
 }

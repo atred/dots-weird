@@ -1,0 +1,16 @@
+[user]
+	name = Andrew Redinbo
+	email = atredinbo@gmail.com
+[core]
+	whitespace = trailing-space
+[github]
+	user = atred
+[alias]
+        stat = status
+        com = commit
+	amend = commit --amend
+	exec = "!exec "
+	ls = ls-files
+	orphan = checkout --orphan
+	unadd = reset HEAD
+	undo-commit = reset --soft "HEAD^"
