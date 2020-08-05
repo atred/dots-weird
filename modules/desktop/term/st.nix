@@ -11,7 +11,9 @@ with lib;
 
   config = mkIf config.modules.desktop.term.st.enable {
     # xst-256color isn't supported over ssh, so revert to a known one
-    my.zsh.rc = ''[ "$TERM" = xst-256color ] && export TERM=xterm-256color'';
+    environment.variables = {
+      TERM = "xterm-256color";
+    };
 
     my.packages = with pkgs; [
       xst  # st + nice-to-have extensions

@@ -24,7 +24,7 @@ with lib;
         tree
       ];
 
-      home.file.".zshrc".source = <config/zsh/rc>
+      home.home.file.".zshrc".source = <config/zsh/rc>;
     };
 
     programs.zsh = {

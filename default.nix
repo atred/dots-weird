@@ -49,7 +49,7 @@ device: username:
     nix-shell = ''NIX_PATH="nixpkgs-overlays=/etc/dotfiles/packages/default.nix:$NIX_PATH" nix-shell'';
     nsh = "nix-shell";
     nen = "nix-env";
-    dots = "make -C ~/dots"
+    dots = "make -C ~/dots";
   };
 
   # Default settings for primary user account. `my` is defined in

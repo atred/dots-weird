@@ -18,7 +18,7 @@ in {
   options = {
     my = {
       ## Personal details
-      username = mkOptionStr "atred";
+      username = mkOptionStr "andrew";
       email = mkOptionStr "atredinbo@gmail.com";
 
       ## Convenience aliases

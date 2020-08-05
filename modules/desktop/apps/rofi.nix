@@ -38,12 +38,6 @@ with lib;
 
         # Fake rofi dmenu entries
         (makeDesktopItem {
-          name = "rofi-bookmarkmenu";
-          desktopName = "Open Bookmark in Browser";
-          icon = "bookmark-new-symbolic";
-          exec = "${<bin/rofi/bookmarkmenu>}";
-        })
-        (makeDesktopItem {
           name = "rofi-filemenu";
           desktopName = "Open Directory in Terminal";
           icon = "folder";

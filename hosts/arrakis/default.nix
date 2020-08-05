@@ -58,5 +58,5 @@
   environment.systemPackages = [ pkgs.acpi ];
   powerManagement.powertop.enable = true;
   # Monitor backlight control
-  harware.acpilight.enable = true;
+  hardware.acpilight.enable = true;
 }

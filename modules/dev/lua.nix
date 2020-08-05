@@ -17,8 +17,6 @@ with lib;
         luaPackages.moonscript
         luarocks
       ];
-
-      zsh.rc = ''eval "$(luarocks path --bin)"'';
     };
   };
 }

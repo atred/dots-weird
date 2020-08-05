@@ -1,4 +1,4 @@
-USER := atred
+USER := andrew
 HOST := arrakis
 HOME := /home/$(USER)
 

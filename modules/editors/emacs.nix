@@ -30,22 +30,22 @@ with lib;
 
         ## Module dependencies
         # :checkers spell
-        aspell
-        aspellDicts.en
-        aspellDicts.en-computers
-        aspellDicts.en-science
+        # aspell
+        # aspellDicts.en
+        # aspellDicts.en-computers
+        # aspellDicts.en-science
         # :checkers grammar
-        languagetool
+        # languagetool
         # :tools editorconfig
         editorconfig-core-c # per-project style config
         # :tools lookup & :lang org +roam
-        sqlite
+        # sqlite
         # :lang cc
         ccls
         # :lang javascript
-        nodePackages.javascript-typescript-langserver
+        # nodePackages.javascript-typescript-langserver
         # :lang latex & :lang org (latex previews)
-        texlive.combined.scheme-medium
+        # texlive.combined.scheme-medium
         # :lang rust
         rustfmt
         rls
