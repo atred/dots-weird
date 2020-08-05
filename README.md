@@ -21,7 +21,7 @@
 ```
 # Assumes your partitions are set up and root is mounted on /mnt
 nix-env -iA nixos.git
-git clone https://github.com/atred/new-dots /etc/dots
+git clone https://github.com/atred/dots /etc/dots
 make -C /etc/dots install
 ```
 
@@ -33,7 +33,7 @@ HOST=${HOST:-arrakis}
 NIXOS_VERSION=20.03
 DOTFILES=/home/$USER/dots
 
-git clone https://github.com/atred/new-dots /etc/dots
+git clone https://github.com/atred/dots /etc/dots
 ln -s /etc/dots $DOTFILES
 chown -R $USER:users $DOTFILES
 
