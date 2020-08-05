@@ -1,4 +1,3 @@
-# TODO add bat1bar and bat0bar
 [colors]
 black = ${xrdb:color0}
 bblack = ${xrdb:color8}
