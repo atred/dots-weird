@@ -19,8 +19,8 @@
 ## Quick start
 
 ```
-# Assumes your partitions are set up and root is mounted on /mnt
-nix-env -iA nixos.git
+# Assumes your partitions are set up and root is /mnt
+nix-env -iA nixos.git nixos.gnumake
 git clone https://github.com/atred/dots /etc/dots
 make -C /etc/dots install
 ```
