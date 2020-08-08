@@ -30,12 +30,12 @@ with lib;
 
         ## Module dependencies
         # :checkers spell
-        # aspell
-        # aspellDicts.en
-        # aspellDicts.en-computers
-        # aspellDicts.en-science
+        aspell
+        aspellDicts.en
+        aspellDicts.en-computers
+        aspellDicts.en-science
         # :checkers grammar
-        # languagetool
+        languagetool
         # :tools editorconfig
         editorconfig-core-c # per-project style config
         # :tools lookup & :lang org +roam

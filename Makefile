@@ -16,11 +16,9 @@ all: channels
 
 install: channels update config move_to_home
 	@sudo nixos-install --no-root-passwd --root "$(PREFIX)" $(FLAGS)
-	@sudo nixos-enter "$(PREFIX)"
-	@echo "Set the user password!\n"
-	@sudo passwd $(USER)
-	@sudo chown $(USER):users -R $(HOME) $(NIXOS_PREFIX)
-	@exit
+	@echo "Set the user password!"
+	@sudo nixos-enter -c "passwd $(USER)"
+	@sudo nixos-enter -c "chown $(USER):users -R /home/$(USER) /etc/nixos"
 
 upgrade: update switch
 
@@ -66,7 +64,7 @@ $(NIXOS_PREFIX)/configuration.nix:
 
 $(HOME)/dots:
 	@mkdir -p $(HOME)/{doc/pres,dl,mus,pic/vid,.local/{temp,share},dev/src}
-	@[ -e $(HOME)/dots ] || sudo ln -s $(NIXOS_PREFIX) $(HOME)/dots
+	@[ -e $(HOME)/dots ] || sudo ln -s /etc/dots $(HOME)/dots
 	# @[ -e $(PREFIX)/etc/dots ] || sudo ln -s $(HOME)/dots $(PREFIX)/etc/dots
 
 # Convenience aliases
