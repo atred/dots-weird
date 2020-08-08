@@ -17,7 +17,7 @@
 *Works on my machine* ¯\\\_(ツ)_/¯
 
 ## Quick start
-
+You may want to disable screen off, sleep, and screen lock on the installer. It's gonna take awhile.
 ```
 # Assumes your partitions are set up and the target root is mounted to /mnt:
 sudo su
