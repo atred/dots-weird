@@ -22,7 +22,7 @@
 # Assumes your partitions are set up and the target root is mounted to /mnt:
 sudo su
 nix-env -iA nixos.git nixos.gnumake
-git clone https://github.com/atred/dots mnt/etc/nixos
+git clone https://github.com/atred/dots /mnt/etc/nixos
 export PREFIX="/mnt"
 make -C /mnt/etc/nixos install
 ```
