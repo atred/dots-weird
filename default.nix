@@ -1,4 +1,4 @@
-# default.nix --- the heart of my dotfiles
+# configuration.nix --- the heart of my dotfiles
 #
 # Author:  Andrew Redinbo <atredinbo@gmail.com>
 #          Henrik Lissner <henrik@lissner.net>
