@@ -24,8 +24,8 @@ device: username:
   nix.autoOptimiseStore = true;
   nix.nixPath = options.nix.nixPath.default ++ [
     # So we can use absolute import paths
-    "bin=/etc/dots/bin"
-    "config=/etc/dots/config"
+    "bin=/etc/nixos/bin"
+    "config=/etc/nixos/config"
   ];
 
   # Add custom packages & unstable channel, so they can be accessed via pkgs.*
@@ -46,7 +46,7 @@ device: username:
   ];
 
   environment.shellAliases = {
-    nix-shell = ''NIX_PATH="nixpkgs-overlays=/etc/dotfiles/packages/default.nix:$NIX_PATH" nix-shell'';
+    nix-shell = ''NIX_PATH="nixpkgs-overlays=/etc/nixos/packages/default.nix:$NIX_PATH" nix-shell'';
     nsh = "nix-shell";
     nen = "nix-env";
     dots = "make -C ~/dots";

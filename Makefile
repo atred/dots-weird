@@ -16,9 +16,11 @@ all: channels
 
 install: channels update config move_to_home
 	@sudo nixos-install --no-root-passwd --root "$(PREFIX)" $(FLAGS)
-	# TODO use nix-enter here
-	#@echo "Set the user password!\n"
-	#@sudo passwd $(USER)
+	@sudo nixos-enter "$(PREFIX)"
+	@echo "Set the user password!\n"
+	@sudo passwd $(USER)
+	@sudo chown $(USER):users -R $(HOME) $(NIXOS_PREFIX)
+	@exit
 
 upgrade: update switch
 
@@ -60,15 +62,12 @@ channels:
 
 $(NIXOS_PREFIX)/configuration.nix:
 	# @sudo nixos-generate-config --root "$(PREFIX)"
-	# @echo "import ./default.nix" | sudo tee "$(NIXOS_PREFIX)/configuration.nix"
 	@[ -f hosts/$(HOST)/default.nix ] || echo "WARNING: hosts/$(HOST)/default.nix does not exist"
 
 $(HOME)/dots:
 	@mkdir -p $(HOME)/{doc/pres,dl,mus,pic/vid,.local/{temp,share},dev/src}
 	@[ -e $(HOME)/dots ] || sudo ln -s $(NIXOS_PREFIX) $(HOME)/dots
 	# @[ -e $(PREFIX)/etc/dots ] || sudo ln -s $(HOME)/dots $(PREFIX)/etc/dots
-	# TODO Use nix-enter here?
-	# @chown $(USER):users -R $(HOME) $(HOME)/dots
 
 # Convenience aliases
 i: install
