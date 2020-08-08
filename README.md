@@ -19,35 +19,12 @@
 ## Quick start
 
 ```
-# Assumes your partitions are set up and root is /mnt
+# Assumes your partitions are set up and the target root is mounted to /mnt:
+sudo su
 nix-env -iA nixos.git nixos.gnumake
-git clone https://github.com/atred/dots /etc/dots
-make -C /etc/dots install
-```
-
-Which is equivalent to:
-
-```
-USER=${USER:-atred}
-HOST=${HOST:-arrakis}
-NIXOS_VERSION=20.03
-DOTFILES=/home/$USER/dots
-
-git clone https://github.com/atred/dots /etc/dots
-ln -s /etc/dots $DOTFILES
-chown -R $USER:users $DOTFILES
-
-# make channels
-nix-channel --add "https://nixos.org/channels/nixos-${NIXOS_VERSION}" nixos
-nix-channel --add "https://github.com/rycee/home-manager/archive/release-${NIXOS_VERSION}.tar.gz" home-manager
-
-# make /etc/nixos/configuration.nix
-nixos-generate-config --root /mnt
-echo "import /etc/dots \"$$HOST\" \"$$USER\"" >/mnt/etc/nixos/configuration.nix
-
-# make install
-nixos-install --root /mnt -I "my=/etc/dots"
-passwd $USER
+git clone https://github.com/atred/dots mnt/etc/nixos
+export PREFIX="/mnt"
+make -C /mnt/etc/nixos install
 ```
 
 ### Management
