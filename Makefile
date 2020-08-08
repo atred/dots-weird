@@ -64,7 +64,7 @@ $(NIXOS_PREFIX)/configuration.nix:
 
 $(HOME)/dots:
 	@mkdir -p $(HOME)/{doc/pres,dl,mus,pic/vid,.local/{temp,share},dev/src}
-	@[ -e $(HOME)/dots ] || sudo ln -s /etc/dots $(HOME)/dots
+	@[ -e $(HOME)/dots ] || sudo ln -s /etc/nixos $(HOME)/dots
 	# @[ -e $(PREFIX)/etc/dots ] || sudo ln -s $(HOME)/dots $(PREFIX)/etc/dots
 
 # Convenience aliases

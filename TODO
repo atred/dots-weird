@@ -1,0 +1,5 @@
+- Add .emacs.d/bin to PATH
+- Fix polybar WS indicators
+
+- Learn Doom Emacs
+- Auto deploy doom d? (maybe put a makefile in .doom.d and say screw the emacs/bin path)

@@ -52,7 +52,7 @@ let cfg = config.modules; in
 
     fonts.fonts = [ pkgs.nerdfonts ];
     my.packages = with pkgs; [
-      shades-of-gray-theme
+      my.ant-dracula
       paper-icon-theme # for rofi
     ];
 
@@ -71,7 +71,7 @@ let cfg = config.modules; in
           # GTK
           "gtk-3.0/settings.ini".text = ''
             [Settings]
-            gtk-theme-name=Shades-of-gray
+            gtk-theme-name=Ant-Dracula
             gtk-icon-theme-name=Paper
             gtk-fallback-icon-theme=gnome
             gtk-application-prefer-dark-theme=true
@@ -82,14 +82,14 @@ let cfg = config.modules; in
           '';
           # GTK2 global theme (widget and icon theme)
           "gtk-2.0/gtkrc".text = ''
-            gtk-theme-name="Shades-of-gray"
+            gtk-theme-name="Ant-Dracula"
             gtk-icon-theme-name="Paper-Mono-Dark"
-            gtk-font-name="Sans 11"
+            gtk-font-name="Sans 10"
           '';
           # QT4/5 global theme
           "Trolltech.conf".text = ''
             [Qt]
-            style=Shades-of-gray
+            style=Ant-Dracula
           '';
         })
         (mkIf cfg.desktop.bspwm.enable {

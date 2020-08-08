@@ -5,7 +5,7 @@ stdenv.mkDerivation rec {
   version = "1.3.0";
 
   src = fetchurl {
-    url = "https://github.com/dracula/gtk/releases/download/v${version}/Ant-Dracula.tar";
+    url = "https://github.com/EliverLara/Ant-Dracula/releases/download/v${version}/Ant-Dracula.tar";
     sha256 = "00b8w69xapqy8kc7zqwlfz1xpld6hibbh35djvhcnd905gzzymkd";
   };
 
@@ -29,7 +29,7 @@ stdenv.mkDerivation rec {
 
   meta = with stdenv.lib; {
     description = "A flat and light theme with a modern look";
-    homepage = https://github.com/dracula/gtk;
+    homepage = https://github.com/EliverLara/Ant-Dracula;
     license = licenses.gpl3;
     platforms = platforms.all;
     maintainers = [
