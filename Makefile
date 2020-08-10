@@ -41,7 +41,7 @@ dry:
 	@sudo nixos-rebuild $(FLAGS) dry-build
 
 gc:
-	@nix-collect-garbage -d
+	@sudo nix-collect-garbage -d
 
 vm:
 	@sudo nixos-rebuild $(FLAGS) build-vm
@@ -63,7 +63,7 @@ $(NIXOS_PREFIX)/configuration.nix:
 	@[ -f hosts/$(HOST)/default.nix ] || echo "WARNING: hosts/$(HOST)/default.nix does not exist"
 
 $(HOME)/dots:
-	@mkdir -p $(HOME)/{doc/pres,dl,mus,pic/vid,.local/{temp,share},dev/src}
+	@sudo mkdir -p $(HOME)/{doc/pres,dl,mus,pic/vid,.local/{temp,share},dev/src}
 	@[ -e $(HOME)/dots ] || sudo ln -s /etc/nixos $(HOME)/dots
 	# @[ -e $(PREFIX)/etc/dots ] || sudo ln -s $(HOME)/dots $(PREFIX)/etc/dots
 

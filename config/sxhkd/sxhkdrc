@@ -1,4 +1,4 @@
-super + alt + Escape
+super + shift + e
 	bspc quit
 
 super + {_,shift + }q

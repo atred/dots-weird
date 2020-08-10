@@ -47,9 +47,9 @@ set nowb
 set wrap
 
 " Colors
-colorscheme nord
+"   \ 'colorscheme': 'nord',
+" colorscheme nord
 let g:lightline = {
-    \ 'colorscheme': 'nord',
     \ 'separator': { 'left': '', 'right': '' },
     \ 'subseparator': { 'left': '', 'right': '' }
     \ }

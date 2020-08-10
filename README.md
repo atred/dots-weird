@@ -28,7 +28,8 @@ make -C /mnt/etc/nixos install
 ```
 
 ### Management
-
+`dotfiles` is aliased to `make -C ~/dots` so that you can replace `make` with `dotfiles` in any of
+the following commands and not have to worry about being in the right directory.
 + `make` = `nixos-rebuild test`
 + `make switch` = `nixos-rebuild switch`
 + `make upgrade` = `nix-channel --update && nixos-rebuild switch`

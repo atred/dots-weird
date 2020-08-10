@@ -31,10 +31,11 @@ with lib;
       enable = true;
       shellAliases = {
         gs = "git status";
+        dotfiles = "make -C ~/dots";
       };
       ohMyZsh = {
         enable = true;
-        theme = "frisk";
+        theme = "lambda";
         plugins = [ "git" ];
       };
     };

@@ -52,6 +52,10 @@ with lib;
       ];
     };
 
+    programs.zsh.shellAliases = {
+      doom = "~/.emacs.d/bin/doom";
+    };
+
     fonts.fonts = [
       pkgs.emacs-all-the-icons-fonts
     ];

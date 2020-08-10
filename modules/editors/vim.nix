@@ -21,6 +21,7 @@ with lib;
       home.programs.neovim = {
         enable = true;
         vimAlias = true;
+        vimdiffAlias = true;
         extraConfig = builtins.readFile <config/vim/extraConfig.vim>;
 
         plugins = with pkgs.vimPlugins; [
