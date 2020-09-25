@@ -35,7 +35,7 @@ with lib;
       };
       ohMyZsh = {
         enable = true;
-        theme = "lambda";
+        theme = "bureau";
         plugins = [ "git" ];
       };
     };

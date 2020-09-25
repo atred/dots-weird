@@ -29,11 +29,12 @@
     };
 
     dev = {
-      # cc.enable = true;
+      cc.enable = true;
+      java.enable = true;
+      markdown.enable = true;
       # common-lisp.enable = true;
       # rust.enable = true;
-      # lua.enable = true;
-      # lua.love2d.enable = true;
+      # python.enable = true;
     };
 
     media = {

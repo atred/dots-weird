@@ -65,6 +65,11 @@ let cfg = config.modules; in
       #   })
       # ];
 
+      home.file.".icons/default/index.theme".text = ''
+        [icon theme]
+        Inherits=Paper
+      '';
+
       xdg.configFile = mkMerge [
         (mkIf config.services.xserver.enable {
           "xtheme/90-theme".source    = ./Xresources;

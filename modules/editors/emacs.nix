@@ -1,5 +1,4 @@
-# Emacs is my main driver. I'm the author of Doom Emacs
-# https://github.com/hlissner/doom-emacs. This module sets it up to meet my
+# Emacs is my main driver.  This module sets it up to meet my
 # particular Doomy needs.
 
 { config, options, lib, pkgs, ... }:
@@ -42,13 +41,18 @@ with lib;
         # sqlite
         # :lang cc
         ccls
+        glslang
         # :lang javascript
         # nodePackages.javascript-typescript-langserver
         # :lang latex & :lang org (latex previews)
         # texlive.combined.scheme-medium
+        # :lang nix
+        nixfmt
         # :lang rust
-        rustfmt
-        rls
+        #rustfmt
+        #rls
+        # :lang sh
+        shellcheck
       ];
     };
 

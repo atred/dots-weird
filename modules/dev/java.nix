@@ -1,20 +1,19 @@
-# modules/dev/scala.nix --- https://scala-lang.org
+# modules/dev/markdown.nix --- Java
 
 { config, options, lib, pkgs, ... }:
 with lib;
 {
-  options.modules.dev.scala = {
+  options.modules.dev.java = {
     enable = mkOption {
       type = types.bool;
       default = false;
     };
   };
 
-  config = mkIf config.modules.dev.scala.enable {
+  config = mkIf config.modules.dev.java.enable {
     my.packages = with pkgs; [
-      scala
       jdk
-      sbt
+      jre
     ];
   };
 }

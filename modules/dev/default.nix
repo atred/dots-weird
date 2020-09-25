@@ -4,16 +4,11 @@
 {
   imports = [
     ./cc.nix
-    ./clojure.nix
+    ./java.nix
     ./common-lisp.nix
-    # ./haskell.nix
-    # ./latex.nix
-    ./lua.nix
-    ./node.nix
-    ./python.nix
+    ./markdown.nix
     ./rust.nix
-    ./scala.nix
-    ./zsh.nix
+    ./python.nix
   ];
 
   options = {};
