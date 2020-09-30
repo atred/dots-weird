@@ -1,12 +1,12 @@
 { stdenv, fetchurl, gtk-engine-murrine }:
 
 stdenv.mkDerivation rec {
-  pname = "ant-dracula-theme";
-  version = "1.3.0";
+  pname = "gtk-dracula-theme";
+  version = "2.0";
 
   src = fetchurl {
-    url = "https://github.com/EliverLara/Ant-Dracula/releases/download/v${version}/Ant-Dracula.tar";
-    sha256 = "00b8w69xapqy8kc7zqwlfz1xpld6hibbh35djvhcnd905gzzymkd";
+    url = "https://github.com/dracula/gtk/releases/download/v${version}/Dracula.tar.xz";
+    # sha256 = "00b8w69xapqy8kc7zqwlfz1xpld6hibbh35djvhcnd905gzzymkd";
   };
 
   propagatedUserEnvPkgs = [
@@ -23,17 +23,17 @@ stdenv.mkDerivation rec {
     runHook postInstall
   '';
 
-  outputHashAlgo = "sha256";
-  outputHashMode = "recursive";
-  outputHash = "084ffv19n8pj7hpzhjv1dqv2hz5rdb6mv3xvficfnqc96dbb29cl";
+  # outputHashAlgo = "sha256";
+  # outputHashMode = "recursive";
+  # outputHash = "084ffv19n8pj7hpzhjv1dqv2hz5rdb6mv3xvficfnqc96dbb29cl";
 
   meta = with stdenv.lib; {
     description = "A flat and light theme with a modern look";
-    homepage = https://github.com/EliverLara/Ant-Dracula;
+    homepage = https://github.com/dracula/gtk;
     license = licenses.gpl3;
     platforms = platforms.all;
     maintainers = [
-      maintainers.pbogdan
+      maintainers.atred
     ];
   };
 }
