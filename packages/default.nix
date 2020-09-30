@@ -1,7 +1,7 @@
 [
   (self: super: with super; {
     my = {
-      ant-dracula = (callPackage ./ant-dracula.nix {});
+      gtk-dracula = (callPackage ./dracula.nix {});
     };
   })
 
