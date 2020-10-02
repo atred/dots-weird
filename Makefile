@@ -16,11 +16,14 @@ all: channels
 
 install: channels update config move_to_home
 	@sudo nixos-install --no-root-passwd --root "$(PREFIX)" $(FLAGS)
+	@sudo nixos-enter -c "sudo -u $(USER) git clone --depth 1 https://github.com/hlissner/doom-emacs $(HOME)/.emacs.d"
+	@sudo nixos-enter -c "sudo -u $(USER) git clone https://github.com/atred/.doom.d $(HOME)/.doom.d"
+	@sudo nixos-enter -c "sudo -u $(USER) $(HOME)/.emacs.d/bin/doom install"
 	@echo "Set the user password!"
 	@sudo nixos-enter -c "passwd $(USER)"
 	@sudo nixos-enter -c "chown $(USER):users -R /home/$(USER) /etc/nixos"
 
-upgrade: update switch
+upgrade: update switch doom
 
 update: channels
 	@sudo nix-channel --update
@@ -53,6 +56,8 @@ clean:
 # Parts
 config: $(NIXOS_PREFIX)/configuration.nix
 move_to_home: $(HOME)/dots
+doom: $(HOME)/.doom.d $(HOME)/.emacs.d
+	@sudo -u $(USER) $(HOME)/.emacs.d/bin/doom upgrade
 
 channels:
 	@sudo nix-channel --add "https://nixos.org/channels/nixos-${NIXOS_VERSION}" nixos
@@ -66,6 +71,14 @@ $(HOME)/dots:
 	@sudo mkdir -p $(HOME)/{doc/pres,dl,mus,pic/vid,.local/{temp,share},dev/src}
 	@[ -e $(HOME)/dots ] || sudo ln -s /etc/nixos $(HOME)/dots
 	# @[ -e $(PREFIX)/etc/dots ] || sudo ln -s $(HOME)/dots $(PREFIX)/etc/dots
+
+$(HOME)/.emacs.d:
+	@git clone --depth 1 https://github.com/hlissner/doom-emacs $(HOME)/.emacs.d
+	@chown -R $(USER):users $(HOME)/.emacs.d
+
+$(HOME)/.doom.d:
+	@git clone https://github.com/atred/.doom.d $(HOME)/.doom.d
+	@chown -R $(USER):users $(HOME)/.doom.d
 
 # Convenience aliases
 i: install
